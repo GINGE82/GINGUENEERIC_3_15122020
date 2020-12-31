@@ -1,0 +1,25 @@
+@mixin btn-gradient {
+    background :linear-gradient(to bottom right, $color-secondary, $color-primary);
+}
+/* Bouton Commander et Explorer*/
+@mixin btn{
+    padding: 1.5rem;
+    width: 100%;
+    text-align: center;
+}
+@mixin btn-in {
+    justify-content: space-around;
+    width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5em;
+    padding: 0.3em;
+    border-radius: 50px;
+    box-shadow: 5px 5px 15px $color-bg-secondary;
+    color: #fff;
+}
+@mixin btn-hov{
+    cursor: pointer;
+    opacity: 0.8;
+    box-shadow: 5px 10px 15px lightgrey;
+}

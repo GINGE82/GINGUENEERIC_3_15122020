@@ -21,17 +21,17 @@
 }
 @keyframes loading{
     0%{
-        opacity: 1;
+        visibility: visible;
     }
     99%{
-        opacity: 1;
+        visibility: visible;
     }
     100%{
-        opacity: 0;
+        visibility: hidden;       
     }
   
 }
-/*@keyframes scrolling{
+@keyframes scrolling{
     0%{ 
         overflow: hidden;
     }
@@ -63,10 +63,10 @@
 /*Animation Plats Check*/
 @keyframes check-circle{
     0%{
-        transform: rotate(0deg);
+        transform: rotate(180deg);
     }
     100%{
-        transform: rotate(360deg);
+        transform: rotate(0deg);
     }
 }
 

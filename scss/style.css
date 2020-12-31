@@ -26,6 +26,12 @@ a {
   color: initial;
 }
 
+.container {
+  max-width: 1240px;
+  margin: auto;
+}
+
+/* Bouton Commander et Explorer*/
 /*Variables Color*/
 /*Variables Media Query*/
 /*Animation Icon Coeur*/
@@ -84,39 +90,52 @@ a {
 
 @-webkit-keyframes loading {
   0% {
-    opacity: 1;
+    visibility: visible;
   }
   99% {
-    opacity: 1;
+    visibility: visible;
   }
   100% {
-    opacity: 0;
+    visibility: hidden;
   }
 }
 
 @keyframes loading {
   0% {
-    opacity: 1;
+    visibility: visible;
   }
   99% {
-    opacity: 1;
+    visibility: visible;
   }
   100% {
-    opacity: 0;
+    visibility: hidden;
   }
 }
 
-/*@keyframes scrolling{
-    0%{ 
-        overflow: hidden;
-    }
-    99%{
-        overflow: hidden;
-    }
-    100%{
-        overflow: scroll;
-    }
+@-webkit-keyframes scrolling {
+  0% {
+    overflow: hidden;
+  }
+  99% {
+    overflow: hidden;
+  }
+  100% {
+    overflow: scroll;
+  }
 }
+
+@keyframes scrolling {
+  0% {
+    overflow: hidden;
+  }
+  99% {
+    overflow: hidden;
+  }
+  100% {
+    overflow: scroll;
+  }
+}
+
 /*Animation Defilement Plats*/
 @-webkit-keyframes box {
   0% {
@@ -164,22 +183,22 @@ a {
 /*Animation Plats Check*/
 @-webkit-keyframes check-circle {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }
 @keyframes check-circle {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }
 
@@ -285,21 +304,25 @@ a {
 }
 
 .btn {
-  padding: 1.5rem 1rem;
-  width: auto;
+  padding: 1.5rem;
+  width: 100%;
+  text-align: center;
 }
 
 .btn_Resto {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 240px;
   margin-left: auto;
   margin-right: auto;
-  width: 240px;
-  padding: 0.3rem;
+  margin-bottom: 5em;
+  padding: 0.3em;
   border-radius: 50px;
   -webkit-box-shadow: 5px 5px 15px #eaeaea;
           box-shadow: 5px 5px 15px #eaeaea;
+  color: #fff;
   background: -webkit-gradient(linear, left top, right bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  color: #fff;
 }
 
 .btn_Resto:hover {
@@ -397,13 +420,13 @@ a {
 
 /*Fin Navigation*/
 /*Début Carte des Restaurants*/
-.restaurant {
-  padding: 1em;
+.restaurants {
+  padding: 1em 1.5em 5em 1.5em;
   background-color: #f6f6f6;
 }
 
 @media only screen and (min-width: 1024px) {
-  .restaurant_Maincard {
+  .restaurants_Maincard {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -415,7 +438,7 @@ a {
   }
 }
 
-.restaurant_Card {
+.restaurant {
   position: relative;
   width: 100%;
   border-radius: 20px;
@@ -425,14 +448,14 @@ a {
 }
 
 @media only screen and (min-width: 1024px) {
-  .restaurant_Card {
-    width: 600px;
+  .restaurant {
+    width: 500px;
     height: auto;
     margin: 15px;
   }
 }
 
-.restaurant_Card_New {
+.restaurant_New {
   position: absolute;
   right: 20px;
   top: 15px;
@@ -443,7 +466,7 @@ a {
   color: #008766;
 }
 
-.restaurant_Card img {
+.restaurant img {
   width: 100%;
   height: 200px;
   -o-object-fit: cover;
@@ -452,7 +475,7 @@ a {
   border-top-left-radius: 20px;
 }
 
-.restaurant_Card_Info {
+.restaurant_Info {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -462,41 +485,40 @@ a {
           justify-content: space-between;
 }
 
-.restaurant_Card_Info p {
+.restaurant_Info p {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
 
-.restaurant_Card_Info_Title {
+.restaurant_Info_Title {
   padding-left: 1em;
 }
 
-.restaurant_Card_Info_Icon {
+.restaurant_Info_Icon {
   padding: 1em;
   cursor: pointer;
 }
 
-.restaurant_Card_Info_Icon :nth-child(1) {
+.restaurant_Info_Icon :nth-child(1) {
   display: block;
   position: absolute;
   opacity: 1;
   right: 20px;
 }
 
-.restaurant_Card_Info_Icon :nth-child(2) {
+.restaurant_Info_Icon :nth-child(2) {
   position: absolute;
   opacity: 0;
   right: 20px;
 }
 
-.restaurant_Card_Info_Icon:hover > :nth-child(1) {
+.restaurant_Info_Icon:hover > :nth-child(1) {
   opacity: 0;
 }
 
-.restaurant_Card_Info_Icon:hover > :nth-child(2) {
+.restaurant_Info_Icon:hover > :nth-child(2) {
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation: heart 1s linear both;
           animation: heart 1s linear both;
@@ -531,8 +553,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 2em;
-  padding-left: 1em;
+  padding: 2em 0.8em 0 1.3em;
   margin-bottom: 0;
   font-size: 1.2em;
 }
@@ -550,7 +571,6 @@ a {
 .menu_Card_Icon:hover > :nth-child(2) {
   background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation: heart 1s linear both;
           animation: heart 1s linear both;
@@ -570,7 +590,7 @@ a {
 }
 
 @media only screen and (min-width: 1024px) {
-  .menu_Card_BoxFood {
+  .boxFood {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -578,24 +598,24 @@ a {
   }
 }
 
-.menu_Card_Food {
+.card {
   width: 100%;
 }
 
 @media only screen and (min-width: 1024px) {
-  .menu_Card_Food {
+  .card {
     margin-left: 10px;
   }
 }
 
-.menu_Card_Food_Title {
+.card_Title {
   font-size: 1.2em;
   padding-left: 1em;
   font-weight: unset;
   margin-bottom: 0.2em;
 }
 
-.menu_Card_Food_Title::after {
+.card_Title::after {
   display: block;
   content: "";
   width: 2em;
@@ -603,12 +623,12 @@ a {
   background-color: #99e2d0;
 }
 
-.menu_Card_Food_BoxDishes {
+.card_BoxDishes {
   -webkit-animation: box 2s linear both;
           animation: box 2s linear both;
 }
 
-.menu_Card_Food_Dishes {
+.card_Food {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -629,11 +649,11 @@ a {
   cursor: pointer;
 }
 
-.menu_Card_Food_Dishes:hover > .menu_Card_Food_Dishes_Title {
+.card_Food:hover > .card_Food_Title {
   width: 75%;
 }
 
-.menu_Card_Food_Dishes:hover > .menu_Card_Food_Dishes_Icon {
+.card_Food:hover > .card_Food_Icon {
   visibility: visible;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
@@ -641,14 +661,12 @@ a {
           transform: translateX(-100%);
 }
 
-.menu_Card_Food_Dishes:hover > .menu_Card_Food_Dishes_Icon .fa-check-circle {
-  -webkit-transform: rotate(-360deg);
-          transform: rotate(-360deg);
-  -webkit-transition-duration: 1s;
-          transition-duration: 1s;
+.card_Food:hover > .card_Food_Icon .fa-check-circle {
+  -webkit-animation: check-circle 500ms linear both;
+          animation: check-circle 500ms linear both;
 }
 
-.menu_Card_Food_Dishes_Title {
+.card_Food_Title {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto;
@@ -657,7 +675,7 @@ a {
   width: 100%;
 }
 
-.menu_Card_Food_Dishes_Title :nth-child(1) {
+.card_Food_Title :nth-child(1) {
   -ms-grid-column: 1;
   grid-column: 1;
   overflow: hidden;
@@ -665,7 +683,7 @@ a {
   white-space: nowrap;
 }
 
-.menu_Card_Food_Dishes_Title :nth-child(2) {
+.card_Food_Title :nth-child(2) {
   -ms-grid-column: 1;
   grid-column: 1;
   overflow: hidden;
@@ -673,7 +691,7 @@ a {
   white-space: nowrap;
 }
 
-.menu_Card_Food_Dishes_Title :nth-child(3) {
+.card_Food_Title :nth-child(3) {
   -ms-grid-column: 2;
   grid-column: 2;
   text-align: right;
@@ -681,11 +699,11 @@ a {
   font-weight: 800;
 }
 
-.menu_Card_Food_Dishes_Title p {
+.card_Food_Title p {
   margin: 0;
 }
 
-.menu_Card_Food_Dishes_Icon {
+.card_Food_Icon {
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -705,18 +723,18 @@ a {
   border-radius: 0 20px 20px 0;
 }
 
-.menu_Card_Food_Dishes_Icon .fa-check-circle {
+.card_Food_Icon .fa-check-circle {
   position: absolute;
   color: #fff;
 }
 
-.menu .order {
-  padding: 1.5em;
+.btn {
+  padding: 1.5rem;
   width: 100%;
   text-align: center;
 }
 
-.menu .order_Button {
+.btn_Order {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 240px;
@@ -727,62 +745,70 @@ a {
   border-radius: 50px;
   -webkit-box-shadow: 5px 5px 15px #eaeaea;
           box-shadow: 5px 5px 15px #eaeaea;
+  color: #fff;
   background: -webkit-gradient(linear, left top, right bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  color: #fff;
 }
 
-.menu .order_Button:hover {
+.btn_Order:hover {
   cursor: pointer;
   opacity: 0.8;
   -webkit-box-shadow: 5px 10px 15px lightgrey;
           box-shadow: 5px 10px 15px lightgrey;
 }
 
-/*.loader{
-    position: fixed;
-    top: 0; 
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index:3;
-    display: flex;
-    opacity :0;
-    background-color: #ffffff;
-    animation: 3s loading linear ;   
-    &_Bars{
-        height: 40px;
-        width: 40px;
-        margin: auto;
-        background: $color-primary;
-        animation:bars 2s linear 0.2s infinite;
-        &::after{
-            content: "";
-            display: block;
-            position: absolute;
-            height: 40px;
-            width: 40px;
-            left: 50px;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            background: $color-secondary;
-            animation:bars 2s linear 0.4s infinite;
-        }
-        &::before{
-            content: "";
-            display: block;
-            position: absolute;
-            height: 40px;
-            width: 40px;
-            left: 100px;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            background: $color-tertiary;
-            animation:bars 2s linear 0.6s infinite;
-        }
-    }
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  visibility: visible;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #ffffff;
+  -webkit-animation: 3s loading linear both;
+          animation: 3s loading linear both;
 }
-*/
+
+.loader_Bars {
+  height: 40px;
+  width: 40px;
+  margin: auto;
+  background: #9356DC;
+  -webkit-animation: bars 2s linear 0.2s infinite;
+          animation: bars 2s linear 0.2s infinite;
+}
+
+.loader_Bars::after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  left: 50px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #FF79DA;
+  -webkit-animation: bars 2s linear 0.4s infinite;
+          animation: bars 2s linear 0.4s infinite;
+}
+
+.loader_Bars::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  left: 100px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #99e2D0;
+  -webkit-animation: bars 2s linear 0.6s infinite;
+          animation: bars 2s linear 0.6s infinite;
+}
 /*# sourceMappingURL=style.css.map */

@@ -1,9 +1,9 @@
-@import "partiel/base";
-@import "partiel/mixin";
-@import "partiel/variables";
-@import "partiel/keyframes";
+@import "partiel/base/base";
+@import "partiel/utils/mixin";
+@import "partiel/utils/variables";
+@import "partiel/utils/keyframes";
 @import "partiel/layout/header-footer";
 @import "partiel/layout/accueil";
 @import "partiel/layout/restaurant";
-@import "partiel/loader";
+@import "partiel/layout/loader";
 
